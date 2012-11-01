@@ -1,0 +1,39 @@
+ul.treeview {
+  position: absolute;
+  overflow: auto;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  cursor: default;
+  line-height: 20px;
+  color: #000;
+  background-color: #fff;
+}
+ul.treeview ul {
+  padding-left: 15px;
+}
+.treeview i {
+  color: rgba(32,80,144, 0.8);
+  text-shadow: 1px 1px 3px #eee, 0 0 0 #000, 1px 1px 3px #eee;
+}
+.treeview .empty {
+  color: #aaa;
+  font-style: italic;
+  padding-left: 10px;
+}
+.treeview .entry {
+  margin-left: -1000px;
+  padding-left: 1000px;
+  display: block;
+  white-space:nowrap;
+}
+.treeview a.entry.selected {
+    background-color: #259;
+    color: #fff;
+}
+.treeview .entry.selected i {
+    color: #fff;
+}
+.treeview .entry:hover {
+    background-color: #e5e5e5;
+}

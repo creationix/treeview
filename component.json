@@ -1,0 +1,12 @@
+{
+  "name": "treeview",
+  "description": "A treeview component",
+  "version": "0.0.1",
+  "main": "treeview.js",
+  "dependencies": {
+    "creationix/font-awesome": "*",
+    "creationix/dombuilder": "*"
+  },
+  "scripts": [ "treeview.js" ],
+  "styles": [ "treeview.css" ]
+}
