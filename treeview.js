@@ -17,17 +17,13 @@ TreeView.prototype.setRoot = function (entry) {
 
 exports.Entry = Entry;
 function Entry(name, title) {
-  var attribs = {};
   var self = this;
-  attribs.onclick = function (evt) {
+  var attribs = {onclick: function (evt) {
     return self.onClick(evt);
-  };
-  if (title) {
-    attribs.title = title;
-  }
-  console.log({name:name,title:title});
+  }};
+  if (title) { attribs.title = title; }
   domBuilder(["li$el",
-    ["a.entry$anchor", attribs,
+    ["a.entry", attribs,
       ["i$icon", {"class": this.icon}], name
     ]
   ], this);
@@ -39,18 +35,20 @@ Entry.prototype.insert = function (index, child) {
     this.el.appendChild(domBuilder(["ul$container"], this));
   }
   if (index === this.children.length) {
-    this.childen.push(child);
-    this.el.appendChild(child.el);
+    this.container.appendChild(child.el);
+    this.children.push(child);
   }
   else {
+    this.container.insertBefore(child.el, this.children[index].el);
     this.children.splice(index, 0, child);
-    this.el.insertBefore(this.children[index].el, child.el);
   }
 };
 
 Entry.prototype.clear = function () {
+  if (!this.children) return;
   this.children = null;
   this.el.removeChild(this.container);
+  this.container = null;
 };
 
 

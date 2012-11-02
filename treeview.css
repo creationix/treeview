@@ -1,13 +1,15 @@
 ul.treeview {
   position: absolute;
   overflow: auto;
+  color: #000;
+  background-color: #fff;
+  cursor: default;
+  line-height: 20px;
+}
+ul.treeview, .treeview ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  cursor: default;
-  line-height: 20px;
-  color: #000;
-  background-color: #fff;
 }
 ul.treeview ul {
   padding-left: 15px;
